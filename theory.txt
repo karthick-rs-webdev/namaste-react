@@ -1,36 +1,60 @@
-What is Emmet?
-* Emmet is a free add-on for the text editor
-* It allows to type shortcuts and then expanded into full pieces of code
-* By using emmet we can type less, that save both keystrokes and time
+What is `NPM`?
+* NPM is a javascript package handler, used to access tons of package to the js application.
 
-Difference between a Library and Framework?
-* Frameworks and libraries are both code written by someone else that helps you perform some common tasks in a less verbose way
-* A framework inverts the control of the program. It tells the developer what they need. A library doesn’t. The programmer calls the library where and when they need it.
-* The degree of freedom a library or framework gives the developer will dictate how “opinionated” it is.
-* https://www.freecodecamp.org/news/the-difference-between-a-framework-and-a-library-bd133054023f/
+What is `Parcel/Webpack`? Why do we need it?
+* Those are known for `Bundler`.
+* Bundler is used to bundle our js application. It combines all of us chunck file into single executable file, which can be understand by browser.
+* And also it supports polyfill, code clean, HMR and image optimization.
+* Few Bundlers are webpack, parcel, vite
 
-What is CDN? Why do we use it?
-* CDN term is known for content delivery network.
-* It is used to embed, open source cloud code to our code. 
+What is `.parcel-cache`?
+* Whenever we bundle our js application, at first time it takes little bit more time comapare to HMR. for ex: 450ms
+* But after we change anything on our file and save, it bundles our JS application within 10ms.
+* .parcel-cache caches our code and whenever any changes happens it bundle very fast.
 
-Why is React known as React?
-* Because of that reactivity with user interaction
+What is `npx` ?
+* npx is used to execute some package command
 
-What is crossorigin in script tag?
-* The crossorigin attribute sets the mode of the request to an HTTP CORS Request.
+What is difference between `dependencies` vs `devDependencies`
+* dependencies can be installed directly. for EX: npm i react
+* devDependencies can be installed through -D in command. for EX: npm i -D parcel
+* in package.json devDependencies are installed under devDependencies object
+* but dependencies are installed are under dependencies object.
+* while production build devDependencies are not taken as accountable.
 
-What is difference between React and ReactDOM?
-* React library is responsible for creating views and ReactDOM library is responsible to actually render UI in the browser
-* Views mean creating Dom elements.
+What is Hot Module Replacement?
+* HMR auto reloads our app whenever any changes occured.
 
-What is difference between react.development.js and react.production.js files via CDN?
-* Both are CDN files
-* Development is used for development purpose
-* Production is a minified and optimised version to load fast.
-* And also development contains some draft or experimental code.
+List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+1. HMR 2. .parcel-cache 3. polyfill 4. cleaning the code 5.minify the code
+* HMR- Hot module replacement auto reloads our app whenever any changes occured.
+* .parcel-cache- caches the code to achieve the fast bundling
+* polyfill- Giving support all modern and older browsers
 
-What is async and defer?
-* When complier parse the HTML code and if it encounter any script, the whole execution will stop and that CDN or script will start execute.
-* This blocks the execution of HTML
-* When we use async and if there is a script tag, complier won’t stop HTML execution and parallel it downloads the CDN. Once download completes and then it will stop HTML execution and look on JS
-* When we use defer and if there is a script tag, complier download it in parallel and execute that script only after HTML.
+What is `.gitignore`? What should we add and not add into it?
+* .gitignore is special file, which should added in root directory for the project when using git as version control.
+* files and files with extension which are added inside .gitignore will be ignore in git operation.
+* while working on JS application, node_modules take huge space and will regenerated using package-lock.
+* so it should be added in gitignore, so we can manage data and storage on git repo.
+
+What is the difference between `package.json` and `package-lock.json`
+* package.json depicts the version of our dependencies and devDependencies.
+* package-lock locks the version of that dependencies.
+
+Why should I not modify `package-lock.json`?
+* It is auto generated. we can delete and re-generate by using npm install.
+
+What is `node_modules` ? Is it a good idea to push that on git?
+* when we install package to our app, the package has some dependencies. those dependencies has some dependencies. this is called transitive dependencies.
+* node_modules is the place where all dependencies code are stored and it's very huge and regenerative.
+* so we should add this thing into .gitignore and then it will not considered while doing git operation.
+
+What is the `dist` folder?
+* dist id the place where our bundler produces the output.
+* all of our code minified and served from dist folder.
+
+What is `browserlists`
+* browserlists is a parcel configurable object, we can customize the browser support of our app.
+
+What is Tree Shaking?
+* tree Shaking also known and dead code elimination, is the practice to eliminate unused code in production build.
